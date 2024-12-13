@@ -2,7 +2,7 @@ import './style.css'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div class="w-screen h-screen flex items-center justify-center bg-black overflow-hidden">
-    <button id="holy-button" class="bg-orange-100 py-4 px-20 text-2xl inter-900 rounded-xl drop-shadow-glow">
+    <button id="holy-button" class="bg-orange-100 py-4 px-20 text-2xl inter-900 rounded-xl drop-shadow-glow select-none">
         Holy.
     </button>
     <audio src="sound.mp3" id="holy-audio"></audio>
