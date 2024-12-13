@@ -20,7 +20,7 @@ document.addEventListener("mousemove", event => {
     const relativeX = event.clientX - (window.innerWidth / 2)
     const relativeY = event.clientY - (window.innerHeight / 2)
     const distance = Math.sqrt(Math.pow(relativeX, 2) + Math.pow(relativeY, 2))
-    const maxDistance = Math.min(window.innerWidth, window.innerHeight)/2
+    const maxDistance = Math.max(window.innerWidth, window.innerHeight)/2
     const distancePercent = distance / maxDistance
 
     if (firstTime && oldDistance > 0.8 && distancePercent < 0.8) {
