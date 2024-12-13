@@ -30,7 +30,7 @@ document.addEventListener("mousemove", event => {
     }
 
 
-    holyAudio.volume = clicked ? 1 : Math.min(Math.max(1 - (distancePercent - 0.1), 0), 1)
+    holyAudio.volume = clicked ? 1 : 1 - distancePercent - 0.05
     oldDistance = distancePercent
 
     console.log((distancePercent * 100) + "%")
