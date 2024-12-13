@@ -37,6 +37,8 @@ document.addEventListener("mousemove", event => {
 });
 
 holyButton.addEventListener("click", () => {
+    if (clicked) return
+
     let scale = 100
     let textOpacity = 100
 
