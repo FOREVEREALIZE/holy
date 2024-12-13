@@ -1,0 +1,8 @@
+(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))r(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const s of t.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&r(s)}).observe(document,{childList:!0,subtree:!0});function i(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function r(e){if(e.ep)return;e.ep=!0;const t=i(e);fetch(e.href,t)}})();document.querySelector("#app").innerHTML=`
+  <div class="w-screen h-screen flex items-center justify-center bg-black overflow-hidden">
+    <button id="holy-button" class="bg-orange-100 py-4 px-20 text-2xl inter-900 rounded-xl drop-shadow-glow">
+        Holy.
+    </button>
+    <audio src="sound.mp3" id="holy-audio"></audio>
+</div>
+`;const c=document.getElementById("holy-button"),l=document.getElementById("holy-audio");let d=!0,u=!1,a=0;document.addEventListener("mousemove",n=>{const o=n.clientX-window.innerWidth/2,i=n.clientY-window.innerHeight/2,r=Math.sqrt(Math.pow(o,2)+Math.pow(i,2)),e=Math.min(window.innerWidth,window.innerHeight)/2,t=r/e;d&&a>.8&&t<.8&&(l.play().then(),l.loop=!0,d=!1),l.volume=u?1:Math.min(Math.max(1-(t-.1),0),1),a=t,console.log(t*100+"%")});c.addEventListener("click",()=>{let n=100,o=100;setInterval(()=>{c.style.scale=`${n}% ${n}%`,c.style.color=`rgba(0, 0, 0, ${o}%)`,n=n+.2,o=o-.2},4),u=!0});
